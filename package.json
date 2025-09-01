@@ -1,0 +1,40 @@
+{
+  "name": "gpt-coding-assistant",
+  "displayName": "GPT Coding Assistant",
+  "description": "A custom VS Code extension with GPT-5 integration for code generation, testing, and explanation.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:gpt.explainCode", "onCommand:gpt.generateTest"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gpt.explainCode",
+        "title": "GPT: Explain Code"
+      },
+      {
+        "command": "gpt.generateTest",
+        "title": "GPT: Generate Unit Test"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vsce": "^3.0.0",
+    "vscode": "^1.1.41"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
+
